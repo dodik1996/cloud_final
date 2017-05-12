@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help Desk</title>
+</head>
+<body>
+	<h1>Hello {{username }}</h1>
+	<form action="{% url 'makerequest' %}" method="post">
+	    {% csrf_token %}
+	   {{ form }}
+	    <input type="submit" value="Submit">
+	</form>
+	<div>
+	<h4>Init</h4>
+	{% for i in init %}
+       <h1>{{ i.title }}</h1>       
+    {% endfor %}
+	</div>
+	<div>
+	<h4>Process</h4>
+	{% for p in process %}
+       <h1>{{ p.title }}</h1>       
+    {% endfor %}
+	</div>
+	<div>
+	<h4>Final</h4>
+	{% for f in final %}
+       <h1>{{ f.title }}</h1>       
+    {% endfor %}
+	</div>
+</body>
+</html>
